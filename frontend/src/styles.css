@@ -1,0 +1,286 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007BFF;
+  font-size: 2rem;
+}
+
+/* Calendario */
+.calendar-container {
+  margin: 20px 0;
+}
+
+.react-calendar {
+  width: auto;
+  max-width: 100%;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.react-calendar__navigation {
+  background-color: #6a11cb;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.react-calendar__navigation__label {
+  flex-grow: 1;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.react-calendar__navigation__label:hover {
+  background: linear-gradient(135deg, #6a11cb, #2575fc) !important;
+  color: white !important;
+}
+
+.react-calendar__navigation__label:active {
+  background: linear-gradient(135deg, #6a11cb, #2575fc) !important;
+  color: white !important;
+  box-shadow: none;
+  transform: scale(1);
+}
+
+.react-calendar__navigation__label {
+  background: linear-gradient(135deg, #6a11cb, #2575fc) !important;
+  color: white !important;
+}
+
+/* Flechas de navegación (por defecto) */
+.react-calendar__navigation__arrow {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white !important;
+  background: none !important;
+  border: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Hover sobre las flechas */
+.react-calendar__navigation__arrow:hover {
+  transform: scale(1.1);
+  color: white !important;
+  background: none !important;
+}
+
+/* Estado activo (al hacer clic) */
+.react-calendar__navigation__arrow:active {
+  background: transparent !important;
+  transform: scale(1);
+  color: white !important;
+}
+
+.react-calendar__tile {
+  height: 50px;
+  width: 140px;
+  text-align: center;
+  border: 1px solid #ccc !important;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  color: #333;
+  font-weight: bold;
+  background: #ffffff;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  gap: 5px;
+}
+
+.react-calendar__tile:hover {
+  border-color: #888;
+  transform: scale(1.05);
+}
+
+/* Días con tareas pendientes */
+.react-calendar__tile.day-with-tasks {
+  border-color: #f39c12;
+  background-color: #f6d365;
+  font-weight: bold;
+}
+
+/* Hover sobre días con tareas pendientes */
+.react-calendar__tile.day-with-tasks:hover {
+  background-color: #f6d365 !important;
+  border-color: #f39c12 !important;
+}
+
+/* Día actual */
+.react-calendar__tile--now {
+  background: linear-gradient(135deg, #4CAF50, #38a169) !important;
+  border: 2px solid #28a745 !important;
+  color: white !important;
+}
+
+/* Hover sobre el día actual */
+.react-calendar__tile--now:hover {
+  background: linear-gradient(135deg, #4CAF50, #38a169) !important;
+  border: 2px solid #28a745 !important;
+  color: white !important;
+}
+
+/* Día seleccionado */
+.react-calendar__tile--active {
+  border-color: #ffa500;
+  background: linear-gradient(135deg, #fa709a, #fee140);
+  color: #333;
+  transform: scale(1.1);
+}
+
+/* Días de la semana */
+.react-calendar__month-view__weekdays {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  padding: 10px 0;
+  color: white;
+}
+
+/* Formulario de tareas */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.task-form input[type="text"],
+.task-form textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.task-form input:focus,
+.task-form textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.task-form textarea {
+  resize: none;
+  height: 100px;
+}
+
+.task-form button {
+  align-self: flex-end;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.task-form button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Lista de tareas */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+li {
+  background: #f9f9f9;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+li:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+li.completed-task {
+  background-color: #e8ffe8;
+  text-decoration: line-through;
+  color: #777;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.task-buttons button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.task-buttons button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.task-buttons button:last-child {
+  background-color: #FF4C4C;
+}
+
+.task-buttons button:last-child:hover {
+  background-color: #cc0000;
+}
